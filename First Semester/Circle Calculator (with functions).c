@@ -11,6 +11,13 @@ float circleArea(float dm) // Function Header
     return comp;
 }
 
+float circumference(float dm); // Function Prototype
+float circumference(float dm) // Function Header
+{   
+    // Function Body
+	float comp = (PI * dm);
+	return comp;
+}
 int main()
 {
     // Declare variables.
@@ -28,7 +35,15 @@ int main()
 
     if(choice == 1)
     {	
+        // Gets value from function call circleArea and prints the value.
     	comp = circleArea(dm);
-        printf("%.1f", comp);
+        printf("%.2f", comp);
     }
+    
+    if(choice == 2)
+    {
+        // Gets value from function call circumference and prints the value.
+    	comp = circumference(dm);
+    	printf("%.2f", comp);
+	}
 }
