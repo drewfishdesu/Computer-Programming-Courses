@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-int add(int p, int q)
+int add(int p, int q); // function prototype
+int add(int p, int q) // function header
 {
+    // function body
     int sum = 0;
     sum = p + q;
     return sum;
