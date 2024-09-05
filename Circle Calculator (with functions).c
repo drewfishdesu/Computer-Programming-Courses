@@ -2,12 +2,13 @@
 #include <math.h>
 #define PI 3.14159
 
-float circleArea(); // Function Prototype
-float circleArea() // Function Header
+float circleArea(float dm); // Function Prototype
+float circleArea(float dm) // Function Header
 {
     // Function Body
-    float radius = (dm / 2)
+    float radius = (dm / 2);
     float comp = (PI * radius * radius);
+    return comp;
 }
 
 int main()
@@ -26,8 +27,8 @@ int main()
     scanf("%d %f", &choice, &dm);
 
     if(choice == 1)
-    {
-        value = circleArea
-        printf("value")
+    {	
+    	comp = circleArea(dm);
+        printf("%.1f", comp);
     }
 }
