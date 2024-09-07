@@ -7,7 +7,7 @@ float circleArea(float dm) // Function Header
 {
     // Function Body
     float radius = (dm / 2);
-    float comp = (PI * radius * radius);
+    float comp = PI * pow(radius, 2);
     return comp;
 }
 
