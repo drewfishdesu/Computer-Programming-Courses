@@ -6,8 +6,8 @@
 ExitProcess proto dWExitCode : dword
 
 .data
-temperature    real4 34.0        ; Initial temperature value
-cutoff          real4 37.5        ; Temperature cutoff value
+temperature    real4 37.5        ; Initial temperature value
+cutoff          real4 37.49        ; Temperature cutoff value
 result          DWORD ?          ; Result (1 for exceeding, 0 otherwise)
 
 .code
