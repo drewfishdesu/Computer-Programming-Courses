@@ -12,12 +12,12 @@ float calcDCPrice(float billAmount) // Function Header
 	float discountedAmt;
 	float discountRate;
 	
-	if (billAmount < 0)
+    if (billAmount < 0)
 	{
 		return -1;
 	}
 	
-	// Determines the discount rate
+    // Determines the discount rate
 	
     if (billAmount < 100) // No discount
     {
