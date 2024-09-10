@@ -9,8 +9,8 @@ float calcDCPrice(float billAmount) // Function Header
 	
     // Function Body
     
-	float discountedAmt;
-	float discountRate;
+    float discountedAmt;
+    float discountRate;
 	
     if (billAmount < 0)
     {
