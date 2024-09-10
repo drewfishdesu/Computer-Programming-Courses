@@ -19,7 +19,7 @@ float calcDCPrice(float billAmount) // Function Header
 	
 	// Determines the discount rate
 	
-	if (billAmount < 100) // No discount
+    if (billAmount < 100) // No discount
     {
         discountRate = 0;
     }
