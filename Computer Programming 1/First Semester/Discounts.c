@@ -44,13 +44,13 @@ int main()
     discountedAmt = calcDCPrice(billAmt);
    	
     if(discountedAmt != -1) // Checks for valid result
-   	{
-   		printf("%.2f", discountedAmt);
-	}
-	else
-	{
-		printf("Invalid Amount!");
-	}
+    {
+   	    printf("%.2f", discountedAmt);
+    }
+    else
+    {
+	    printf("Invalid Amount!");
+    }
     
-	return 0;
+    return 0;
 }
