@@ -31,9 +31,6 @@ float calcDCPrice(float billAmount) // Function Header
     {
         discountRate = 20;
     }
-
-    // Calculates the discounted amount
-
     discountedAmt = billAmount * (1 - (discountRate / 100));
     return discountedAmt;
 }
