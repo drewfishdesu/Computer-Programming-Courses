@@ -41,10 +41,9 @@ int main()
     float discountedAmt;
 
     scanf("%f", &billAmt);
-    
-   	discountedAmt = calcDCPrice(billAmt);
+    discountedAmt = calcDCPrice(billAmt);
    	
-   	if(discountedAmt != -1) // Checks for valid result
+    if(discountedAmt != -1) // Checks for valid result
    	{
    		printf("%.2f", discountedAmt);
 	}
