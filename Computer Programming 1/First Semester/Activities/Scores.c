@@ -3,7 +3,8 @@
 void printMessage(int score); // Function prototype
 void printMessage(int score) // Function header
 {
-	// If-else statements
+    // If-else statements
+    // && is used to indicate a range.
     if(score >= 95 && score <= 100)
     {
         printf("Excellent!");
