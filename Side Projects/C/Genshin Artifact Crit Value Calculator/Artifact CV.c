@@ -14,6 +14,7 @@ int main()
     printf("Welcome to the artifact calculator. Input your crit damage followed by the crit rate.");
     printf("\n");
     printf("Example: 21 10.5");
+    printf("\n");
 
     // Receives input from the user (crit damage, crit rate)
 
