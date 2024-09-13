@@ -27,7 +27,11 @@ int main()
 
     // Prints the crit value for your artifact.
 
+    printf("\n");
     printf("Your artifact has %.2f CV.", crit_value);
+
+    // Ends the program.
+
     return 0;
 
 }
