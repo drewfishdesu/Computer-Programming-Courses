@@ -35,7 +35,7 @@ int main()
     // Declare variables
     int score;
     
-    printf("Input a score from 0-100." );
+    printf("Input a score from 0-100. ");
     scanf("%d", &score);
 	
 	// Calls the printMessage function.
