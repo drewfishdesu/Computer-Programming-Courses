@@ -1,5 +1,7 @@
 #include <iostream>
-using namespace std
+#include <iomanip> // Include for std::setprecision
+using namespace std;
+
 #define PI 3.14159
 
 int main()
@@ -12,32 +14,32 @@ int main()
     float radius;
     int choice;
 
-    cout<<"What computation would you like to do?";
-    cout<<"\N";
-    cout<<"1 for area, 2 for circumference";
-    cout<<"\N";
-    cout<<"\N";
+    cout << "What computation would you like to do?" << endl;
+    cout << "1 for area, 2 for circumference" << endl;
     
-    cin>>choice;
+    cin >> choice;
 
-    if(choice == 1)
+    cout<<"What is the diameter of your circle?" << endl;
+    cin >> diameter;
+
+    if(choice == 1) // Calculate area
     {
-        float radius = (diameter / 2);
-        float computation = (PI * radius * radius)
-        cout<<computation;
-        return computation;
+        float radius = (diameter / 2); // Calculates radius
+        float computation = (PI * radius * radius); // Calculates the area
+        cout << fixed << setprecision(2); // Sets output format to fixed and precision to 2 decimal places only.
+        cout << computation << endl;
     }
-
-    if(choice == 2)
+ 
+    else if(choice == 2) // Calculate circumference
     {
         float computation = (PI * diameter);
-        cout<<computation;
-        return comp;
+        cout << fixed << setprecision(2); // Sets output format to fixed and precision to 2 decimal places only.
+        cout << computation << endl;
     }
 
     else
     {
-        cout<<"Invalid Input";
+        cout<<"Invalid Input" << endl;
     }
 
     return 0;
