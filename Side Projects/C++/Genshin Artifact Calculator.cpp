@@ -14,7 +14,6 @@ int main()
     cout << "For example, 21.8 14.4" << endl;
 
     // Asks the user for input.
-
     cin >> crit_rate >> crit_damage;
 
     // Calculates the crit value of an artifact.
