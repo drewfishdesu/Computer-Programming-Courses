@@ -6,13 +6,16 @@ using namespace std;
 
 int main()
 
-// Declare variables
-
 {
+
+    // Declare variables
+
     float diameter;
     float computation;
     float radius;
     int choice;
+
+    // Asks the user for input
 
     cout << "What computation would you like to do?" << endl;
     cout << "1 for area, 2 for circumference" << endl;
@@ -21,6 +24,8 @@ int main()
 
     cout<<"What is the diameter of your circle?" << endl;
     cin >> diameter;
+
+    // Calculates based on user input.
 
     if(choice == 1) // Calculate area
     {
