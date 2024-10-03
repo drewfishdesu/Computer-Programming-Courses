@@ -10,9 +10,9 @@ int main()
     // Gets the input for the birth year.
     cin >> birthYear;
 
-    // Tells the program to start from the year after the person's birth year.
+	// Initializes the birth year.
 
-    int year = birthYear + 1;
+    int year = birthYear;
 
     // Uses a loop to count leap years until the current year.
 
