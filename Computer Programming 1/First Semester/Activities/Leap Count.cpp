@@ -27,7 +27,7 @@ int main()
     }
 
     // Outputs the result.
-    cout << leapYearCount << endl;
+    cout << "Leap year count is : " << leapYearCount << endl;
 
     return 0;
 }
