@@ -7,7 +7,7 @@ int main()
     int count = 1;
     int x = number;
 
-    cin >> number << endl;
+    cin >> number; // Asks the user for input.
 
     while(count <= x) // Uses a while loop to find and print factors.
     {
@@ -18,7 +18,6 @@ int main()
         count++; // Moves to the next integer
     }
     
-    cout << endl; // Prints a new line at the end
     return 0;
 
 }
