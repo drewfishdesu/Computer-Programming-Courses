@@ -25,29 +25,26 @@ int main()
         purch -= 50; // Decrease purchase amount by threshold
     }
 
-    // Output results
-    cout << "Calculated Points: " << updatedPoints << endl;
-
     // Determine reward based on the original purchase amount
     if (points >= 1000)
     {
-        cout << "You get an iPad Mini." << endl;
+        cout << "Calculated Points: " << points << ". You get an iPad Mini." << endl;
     }
     else if (points >= 800)
     {
-        cout << "You get a Rechargeable Mini Fan." << endl;
+        cout << "Calculated Points: " << points << ". You get a Rechargeable Mini Fan." << endl;
     }
     else if (points >= 500)
     {
-        cout << "You get a Coffee Maker." << endl;
+        cout << "Calculated Points: " << points << ". You get a Coffee Maker." << endl;
     }
     else if (points >= 250)
     {
-        cout << "You get an Oven Toaster." << endl;
+        cout << "Calculated Points: " << points << ". You get an Oven Toaster." << endl;
     }
     else
     {
-        cout << "You get nothing." << endl;
+        cout << "Calculated Points: " << points << ". You get nothing." << endl;
     }
 
     return 0;
