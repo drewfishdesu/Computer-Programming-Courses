@@ -10,13 +10,13 @@ int main()
 
     while(number > 0)
     {
-        number = number / 10
+        number = number / 10;
         count ++;
     }
 
     if(count % 2 == 0) // even
     {
-        cout << "Number's length is " << count << "and is even.";
+        cout << "Number's length is " << count << " and is even.";
     }
     else
     {

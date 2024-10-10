@@ -8,13 +8,13 @@ int main()
 
     cin >> number;
 
-    for(number = number; number > 0; num /= 10)
+    for(number = number; number > 0; number /= 10)
     {
-        count++
+        count++;
     }
     if(count % 2 == 0) // even
     {
-        cout << "Number's length is " << count << "and is even.";
+        cout << "Number's length is " << count << " and is even.";
     }
     else
     {
