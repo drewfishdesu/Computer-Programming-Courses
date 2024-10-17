@@ -32,7 +32,7 @@ int main()
                 cout << "Too high, guess lower. " << stars << " stars remain." << endl;
             }
 
-            if (stars == 0)
+            if (stars == 0) // Terminates the program if the user runs out of attempts.
             {
                 cout << "You lost!" << endl;
             }
