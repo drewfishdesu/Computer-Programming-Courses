@@ -3,7 +3,8 @@
 using namespace std;
 
 int main()
-{
+{   
+    // Defines variables
     int try_num;
     int stars = 5;
 
@@ -11,13 +12,13 @@ int main()
     {
         cin >> try_num; // Gets user input
 
-        if (try_num == SECRET_NUM)
+        if (try_num == SECRET_NUM) // If number is guessed correctly.
         {
             cout << "GGWP, you guessed correctly!" << endl;
             break; // Exits the program if the number is guessed correctly.
         }
 
-        else
+        else // If number is guessed incorrectly.
         {
             stars--; // Deducts a star per incorrect guess.
             if (try_num < SECRET_NUM)
