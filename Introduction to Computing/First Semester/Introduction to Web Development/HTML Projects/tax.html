@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Income Tax Calculator</h1>
+    <label>Taxable Income:</label>
+    <input type="number" id="ti" oninput="computeTax()">
+    
+    <br>
+    
+    <label>Income Tax:</label>
+    <input type="number" id="incometax" readonly>
+
+</body>
+<script>
+    function computeTax() {
+        let basictax = 0, brackettax = 0, totaltax, incometax;
+
+        // Get the taxable income entered by the user
+        incometax = parseFloat(document.getElementById("ti").value);
+
+        // Check if the input value is a valid number
+        if (isNaN(incometax) || incometax < 0) {
+            document.getElementById("incometax").value = "";
+            return;
+        }
+
+        // Calculate tax based on income slabs
+        if (incometax < 250000) {
+            basictax = 0;
+            brackettax = 0;
+        }
+
+        else if (incometax >= 250000 && incometax < 400000) {
+            basictax = 0;
+            brackettax = 0.20 * (incometax - 250000);
+        }
+
+        else if (incometax >= 400000 && incometax < 800000) {
+            basictax = 30000; // flat tax for this bracket
+            brackettax = 0.25 * (incometax - 400000);
+        }
+
+        else if (incometax >= 800000 && incometax < 2000000) {
+            basictax = 130000; // flat tax for this bracket
+            brackettax = 0.30 * (incometax - 800000);
+        }
+
+        else if (incometax >= 2000000 && incometax < 8000000) {
+            basictax = 490000; // flat tax for this bracket
+            brackettax = 0.32 * (incometax - 2000000);
+        }
+
+        else if (incometax >= 8000000) {
+            basictax = 2410000; // flat tax for this bracket
+            brackettax = 0.35 * (incometax - 8000000);
+        }
+
+        // Total tax calculation
+        totaltax = Math.round(basictax + brackettax);
+
+        // Display the tax in the output field
+        document.getElementById("incometax").value = totaltax;
+
+        // Log the result for debugging
+        console.log("Income Tax:", totaltax);
+    }
+</script>
+
+</html>
