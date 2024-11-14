@@ -38,4 +38,6 @@ function convertFeetToMeters() {
         const meters = (feet / 3.281).toFixed(2);
         document.getElementById('feetResult').innerText = meters + "m";
     } else {
-        document.getElementById('feetResult'
+        document.getElementById('feetResult').innerText = "Please enter a valid number.";
+    }
+}
