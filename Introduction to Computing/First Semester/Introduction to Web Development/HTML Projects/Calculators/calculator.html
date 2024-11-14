@@ -11,23 +11,42 @@
         <h1>Unit Converter</h1>
 
         <!-- For Celsius to Fahrenheit -->
-         <div class="coverter">
+         <div class="converter">
             <label for="celsiusInput">Celsius to Fahrenheit</label>
             <input type="number" id="celsiusInput" placeholder="Enter temperature in Celsius">
             <button onclick="convertCelsiusToFahrenheit()">Convert</button>
             <div id="celsiusResult" class="result"></div>
          </div>
+
+         <!-- For Fahrenheit to Celsius -->
+          <div class="converter">
+            <label for="fahrenheitInput">Fahrenheit to Celsius</label>
+            <input type="number" id="fahrenheitInput" placeholder="Enter temperature in Fahrenheit">
+            <button onclick="convertFahrenheitToCelsius()">Convert</button>
+            <div id="fahrenheitResult" class="result"></div>
+          </div>
     </div>
 
     <script>
         // Celsius to Fahrenheit Converter
-        function convertCelsiusToFahrenheit(){
+        function convertCelsiusToFahrenheit() {
             const celsius = document.getElementById('celsiusInput').value;
             if(celsius !== '') {
                 const fahrenheit = (celsius * 9/5) + 32;
                 document.getElementById('celsiusResult').innerText = fahrenheit + '°F';
             } else {
                 document.getElementById('celsiusResult').innerText = "Please enter a valid number.";
+            }
+        }
+
+        // Fahrenheit to Celsius Converter
+        function convertFahrenheitToCelsius() {
+            const fahrenheit = document.getElementById('fahrenheitInput').value;
+            if(fahrenheit !== '') {
+                const celsius = (fahrenheit - 32) * 5/9;
+                document.getElementById('fahrenheitResult').innerText = celsius + '°C';
+            } else {
+                document.getElementById('fahrenheitResult').innerText = "Please enter a valid number.";
             }
         }
     </script>
