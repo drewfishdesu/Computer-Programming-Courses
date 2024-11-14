@@ -12,7 +12,7 @@ int main()
     while (count < 10)
     {
     	cin >> input;
-	    if(input == -1)
+	    if(input == -1) // Stops the code when -1 is typed in.
 	    {
 	        break;
 	    }
