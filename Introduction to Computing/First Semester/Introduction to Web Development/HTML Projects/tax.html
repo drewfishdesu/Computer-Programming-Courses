@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="addListeners()">
 
     <h1>Income Tax Calculator</h1>
     <label>Taxable Income:</label>
@@ -12,7 +12,14 @@
     <input type="number" id="incometax" readonly>
 
 </body>
+
+// Functions
+
 <script>
+    function addListeners() {
+        document.getElementById("ti").addEventListener("keyup", computeTax())
+    }
+
     function computeTax() {
         let basictax = 0, brackettax = 0, totaltax, incometax;
 
