@@ -25,6 +25,23 @@
             <button onclick="convertFahrenheitToCelsius()">Convert</button>
             <div id="fahrenheitResult" class="result"></div>
           </div>
+
+        <!-- For Meters to Feet -->
+         <div class="converter">
+           <label for="metersInput">Meters to Feet Converter</label>
+           <input type="number" id="metersInput" placeholder="Enter distance in meters">
+           <button onclick="convertMetersToFeet()">Convert</button>
+           <div id="metersResult" class="result"></div>
+         </div>
+        
+         <!-- For Feet to Meters -->
+          <div class="converter">
+            <label for="feetInput">Feet to Meters Converter</label>
+            <input type="number" id="feetInput" placeholder="Enter distance in feet">
+            <button onclick="convertFeetToMeters()">Convert</button>
+            <div id="feetResult" class="result"></div>
+          </div>
+
     </div>
 
     <script>
@@ -47,6 +64,28 @@
                 document.getElementById('fahrenheitResult').innerText = celsius + '°C';
             } else {
                 document.getElementById('fahrenheitResult').innerText = "Please enter a valid number.";
+            }
+        }
+
+        // Meters to Feet Converter
+        function convertMetersToFeet() {
+            const meters = document.getElementById('metersInput').value;
+            if(meters !== '') {
+                const feet = meters * 3.281
+                document.getElementById('metersResult').innerText = feet + " ft.";
+            } else {
+                document.getElementById('metersResult').innerText = "Please enter a valid number.";
+            }
+        }
+
+        // Feet to Meters Converter
+        function convertFeetToMeters() {
+            const feet = document.getElementById('feetInput').value;
+            if(feet !== '') {
+                const meters = feet / 3.281
+                document.getElementById('feetResult').innerText = meters + "m";
+            } else {
+                document.getElementById('feetResult').innerText = "Please enter a valid number.";
             }
         }
     </script>
