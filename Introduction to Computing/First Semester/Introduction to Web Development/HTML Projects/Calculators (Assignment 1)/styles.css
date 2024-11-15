@@ -86,13 +86,29 @@ button:hover {
 
 /* Result Display Styles */
 .result {
-    padding: 10px;
+    padding: 15px;
     font-size: 18px;
-    color: #4CAF50;
+    color: #333;
     font-weight: bold;
-    text-align: center;
+    text-align: left; /* Align results to the left for better readability */
     border-top: 2px solid #f0f0f0;
     margin-top: 20px;
+}
+
+.result p {
+    margin-bottom: 10px;
+}
+
+.result strong {
+    color: #4CAF50;
+}
+
+/* Span inside result display for dynamic results */
+#factorialResult,
+#sumResult,
+#averageResult {
+    font-weight: normal;
+    color: #333;
 }
 
 /* Responsive Design (Mobile-first approach) */
@@ -107,6 +123,10 @@ button:hover {
     }
 
     input[type="number"], button {
+        font-size: 16px;
+    }
+
+    .result {
         font-size: 16px;
     }
 }
