@@ -8,7 +8,7 @@ function calculate() {
 
     // Get factorials using a while loop
     let factorial = 1;
-    let i =1;
+    let i = 1;
     while (i <= N) {
         factorial *= i;
         i++;
@@ -31,14 +31,14 @@ function calculate() {
     average = total / N;
 
     // Shows the results on the page
-    document.getElementById("factorialResult").textContent = factorial;
+    document.getElementById("factorialResult").textContent = factorial.toFixed(2);
     document.getElementById("sumResult").textContent = sum;
     document.getElementById("averageResult").textContent = average.toFixed(2);
 
     // Updates the factorial result (in scientific notation)
     if(factoral > 1e15) {
         // Two significant digits
-        document.getElementById("factorialResult").textContent = factorial.toExponential(2);
+        document.getElementById("factorialResult").textContent = factorial.toFixed(2);
     } else { // Display normally
         document.getElementById("factorialResult").textContent = factorial;
     }
