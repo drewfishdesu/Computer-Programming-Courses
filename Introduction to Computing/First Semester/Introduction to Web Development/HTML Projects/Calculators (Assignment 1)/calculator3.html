@@ -2,28 +2,27 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Factorial, Sum, and Average of First N Natural Numbers
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Factorial, Sum, and Average of First N Natural Numbers</title>
         <link rel="stylesheet" href="styles.css">
-        </title>
     </head>
     <body>
-        <h1>Factorial, Sum, and Average of First N  Natural Numbers</h1>
+        <h1>Factorial, Sum, and Average of First N Natural Numbers</h1>
         <div class="container">
             <label for="numberInput">Enter a positive integer</label>
             <input type="number" id="numberInput" min="1" placeholder="Enter N">
             <button onclick="calculate()">Calculate</button>
-            <div id="result" class="result"></div>
 
-            <!-- Static area (updates using JavaScript) -->
-             <div id="result" class="result">
+            <!-- Static result area (updates using JavaScript) -->
+            <div id="initialResult" class="result">
                 <h3>Results:</h3>
                 <p><strong>Factorial:</strong> <span id="factorialResult">-</span></p>
                 <p><strong>Sum:</strong> <span id="sumResult">-</span></p>
                 <p><strong>Average:</strong> <span id="averageResult">-</span></p>
-             </div>
+            </div>
         </div>
-    </body>
 
-    <!-- Imports the script file -->
-    <script src="scripts3.js"></script>
+        <!-- Importing the JavaScript file -->
+        <script src="scripts3.js"></script>
+    </body>
 </html>

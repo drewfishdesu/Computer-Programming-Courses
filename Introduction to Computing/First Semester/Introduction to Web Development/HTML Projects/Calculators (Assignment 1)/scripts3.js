@@ -30,6 +30,17 @@ function calculate() {
     }
     average = total / N;
 
-    // Updates the results on the page
+    // Shows the results on the page
+    document.getElementById("factorialResult").textContent = factorial;
+    document.getElementById("sumResult").textContent = sum;
+    document.getElementById("averageResult").textContent = average.toFixed(2);
+
+    // Updates the factorial result (in scientific notation)
+    if(factoral > 1e15) {
+        // Two significant digits
+        document.getElementById("factorialResult").textContent = factorial.toExponential(2);
+    } else { // Display normally
+        document.getElementById("factorialResult").textContent = factorial;
+    }
 }
 
