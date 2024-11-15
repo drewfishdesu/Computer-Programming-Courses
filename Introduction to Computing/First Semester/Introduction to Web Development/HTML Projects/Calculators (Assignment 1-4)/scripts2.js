@@ -1,16 +1,8 @@
-function calculatTax() {
-    // Gets the taxable income input
-    const taxableIncome = parseFloat(document.getElementById("taxableIncome").value);
+ // Function to calculate income tax
+ function calculateTax(taxableIncome) {
+    let tax = 0;
 
-    // Checks if the input is a valid number (error handling)
-    if (isNaN(taxableIncome) || taxableIncome < 0) {
-        alert("Please enter a valid positive number for taxable income");
-        return;
-    }
-
-    let tax = 0
-
-    // Tax Calculation
+    // Tax Calculation based on the provided table
     if (taxableIncome <= 250000) {
         tax = 0; // No tax
     } else if (taxableIncome <= 400000) {
@@ -25,7 +17,26 @@ function calculatTax() {
         tax = 2410000 + (taxableIncome - 8000000) * 0.35; // 2,410,000 + 35% on excess over 8,000,000
     }
 
-    // Displays the calculated tax and taxable income
-    document.getElementById("displayIncome").textContent = "₱" + taxableIncome.toLocaleString();
-    document.getElementById("displayTax").textContent = "₱" + taxableIncome.toLocaleString();
+    return tax;
 }
+
+// Function to handle input change and calculate tax in real-time
+function handleInputChange() {
+    const taxableIncome = parseFloat(document.getElementById("taxableIncome").value);
+
+    if (isNaN(taxableIncome) || taxableIncome < 0) {
+        document.getElementById("displayIncome").textContent = "-";
+        document.getElementById("displayTax").textContent = "-";
+        return; // Exit if input is invalid
+    }
+
+    // Calculate tax based on taxable income
+    const tax = calculateTax(taxableIncome);
+
+    // Update the result dynamically
+    document.getElementById("displayIncome").textContent = "₱" + taxableIncome.toLocaleString();
+    document.getElementById("displayTax").textContent = "₱" + tax.toLocaleString();
+}
+
+// Add event listener for real-time updates
+document.getElementById("taxableIncome").addEventListener("input", handleInputChange);
