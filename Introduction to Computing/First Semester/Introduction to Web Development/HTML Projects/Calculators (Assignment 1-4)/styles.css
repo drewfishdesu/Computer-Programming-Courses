@@ -8,7 +8,7 @@
 /* Body Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f9;
     color: #333;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    max-width: 450px;
+    max-width: 900px;
     width: 100%;
 }
 
@@ -36,22 +36,24 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Converter Section Style */
-.converter {
+/* Form Section Styling */
+#form-section {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 /* Label Styles */
 label {
     font-size: 16px;
     color: #555;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Input Styles */
+input[type="text"],
 input[type="number"] {
     padding: 10px;
     font-size: 16px;
@@ -63,6 +65,7 @@ input[type="number"] {
 }
 
 /* Input focus styles */
+input[type="text"]:focus,
 input[type="number"]:focus {
     border-color: #4CAF50;
 }
@@ -85,7 +88,46 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Result Display Styles */
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    background-color: #f2f2f2;
+}
+
+/* Action Buttons in Table (Delete Button) */
+td button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+td button:hover {
+    background-color: #d32f2f;
+}
+
+/* Payroll List Result Styling */
 .result {
     padding: 15px;
     font-size: 18px;
@@ -128,11 +170,15 @@ button:hover {
         font-size: 24px;
     }
 
-    input[type="number"], button {
+    input[type="text"], input[type="number"], button {
         font-size: 16px;
     }
 
     .result {
         font-size: 16px;
+    }
+
+    table {
+        font-size: 14px;
     }
 }
