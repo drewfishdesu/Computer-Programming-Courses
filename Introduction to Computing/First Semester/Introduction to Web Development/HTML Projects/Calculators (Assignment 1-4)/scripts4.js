@@ -2,13 +2,13 @@ let payrollData = [];
 
 function addEmployee() {
     // Get input values
-    const name = document.getElementById('name').ariaValueMax;
+    const name = document.getElementById('name').value;
     const daysWorked = parseInt(document.getElementById('daysWorked').value);
     const dailyRate = parseFloat(document.getElementById('dailyRate').value);
     const deduction = parseFloat(document.getElementById('deduction').value);
 
     // Error handling and input validation
-    if(!name || !daysWorked || !dailyRate || !deduction) {
+    if (!name || !daysWorked || !dailyRate || !deduction) {
         alert("Please fill out all fields.");
         return;
     }
@@ -24,7 +24,7 @@ function addEmployee() {
         dailyRate: dailyRate,
         grossPay: grossPay,
         deduction: deduction,
-        netpay: netPay,
+        netPay: netPay,
     });
 
     // Updates the table
