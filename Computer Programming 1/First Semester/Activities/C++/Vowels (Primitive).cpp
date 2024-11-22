@@ -11,7 +11,7 @@ int main()
     cin.get(word, 50);
     for(int i = 0; i < strlen(word); i++)
     {
-        for(int j = 0; j < strlen(vowels); j++)
+        for(int j = 0; j < 10; j++)
         {
             if(word[i] == vowels[j])
             {
@@ -20,6 +20,6 @@ int main()
         }
     }
 
-    cout << "Vowels:" << vowelCount << endl;
+    cout << "Vowels: " << vowelCount << endl;
     return 0;
 }
