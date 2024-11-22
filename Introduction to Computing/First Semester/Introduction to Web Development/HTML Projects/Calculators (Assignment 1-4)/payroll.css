@@ -2,6 +2,8 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
     background-color: #f4f4f4;
 }
 
@@ -14,9 +16,9 @@ h1 {
 /* Form section styling */
 #form-section {
     max-width: 500px;
-    margin: 0 auto;
-    background-color: #fff;
+    margin: 0 auto;  /* Centers the form */
     padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -31,9 +33,10 @@ label {
 
 /* Style for input fields */
 input[type="text"], input[type="number"] {
-    width: 100%;
+    width: calc(100% - 16px); /* Ensures full width with margins considered */
     padding: 8px;
     margin-bottom: 15px;
+    margin-right: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
@@ -49,6 +52,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    display: inline-block;
 }
 
 button:hover {
