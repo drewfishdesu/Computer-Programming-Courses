@@ -11,13 +11,13 @@ int main()
     cin.get(input, 30);
     cin >> toReplace >> replaceWith;
 
-    bool found = false; // Flag to check if oneof the characters are found in the string
+    bool found = false; // Flag to check if one of the characters are found in the string
 
     for(int x = 0; x < strlen(input); x++)
     {
-        if(input[x] == toReplace || input[x] == replaceWith)
+        if(input[x] == toReplace && input[x] == replaceWith)
         {
-            found = true; // At least one of the characters are found
+            found = true; // If both letters are found
             break;
         }
     }
