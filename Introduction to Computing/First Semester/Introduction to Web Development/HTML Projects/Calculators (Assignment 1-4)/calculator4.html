@@ -7,23 +7,23 @@
         <link rel="stylesheet" href="payroll.css">
     </head>
     <body>
-        <h1>Simple Payroll</h1>
+        <h1 id="header">Simple Payroll</h1>
         <div id="form-section">
             <!-- Employee Name -->
             <label for="name">Employee Name:</label>
-            <input type="text" id="name" placeholder="Enter employee name">
+            <input type="text" id="name" placeholder="Enter employee name" class="formInput">
                 
             <!-- Days Worked -->
             <label for="daysWorked">Days Worked:</label>
-            <input type="number" id="daysWorked" placeholder="Enter days worked">
+            <input type="number" id="daysWorked" placeholder="Enter days worked" class="formInput">
 
             <!-- Daily Rate -->
             <label for="dailyRate">Daily Rate:</label>
-            <input type="number" id="dailyRate" placeholder="Enter daily rate">
+            <input type="number" id="dailyRate" placeholder="Enter daily rate" class="formInput">
 
             <!-- Deduction -->
             <label for="deduction">Deduction:</label>
-            <input type="number" id="deduction" placeholder="Enter deduction amount">
+            <input type="number" id="deduction" placeholder="Enter deduction amount" class="formInput">
 
             <button onclick="addEmployee()">Add Employee</button>
             <button onclick="deleteEmployee()">Delete Employee</button>
@@ -47,6 +47,18 @@
         <tbody>
             <!-- Payroll list will be displayed in this area -->
         </tbody>
+        <tfoot>
+          <tr>
+                <th>Total</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th id="totalGross"></th>
+                <th id="totalDeduction"></th>
+                <th id="totalNet"></th>
+                <th></th>
+            </tr>
+        </tfoot>
         </table>
         <!-- Import JavaScript -->
         <script src="scripts4.js"></script>

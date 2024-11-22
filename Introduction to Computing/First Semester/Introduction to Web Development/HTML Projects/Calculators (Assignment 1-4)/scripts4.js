@@ -40,19 +40,29 @@ function addEmployee() {
 function updatePayrollTable() {
     const tableBody = document.getElementById('payrollTable').getElementsByTagName('tbody')[0];
     tableBody.innerHTML = ''; // Clear current table rows
+    let totalGross = 0;
+    let totalDeduction = 0;
+    let totalNet = 0;
 
     payrollData.forEach((employee, index)  =>{
+        totalGross += employee.grossPay;
+        totalDeduction += employee.deduction;
+        totalNet += employee.netPay;
+        
         const row = tableBody.insertRow();
         row.innerHTML = `
-        <td>${index + 1}</td>
+        <td style="text-align: right; padding-right: 10px">${index + 1}</td>
         <td>${employee.name}</td>
-        <td>${employee.daysWorked}</td>
-        <td>${employee.dailyRate.toFixed(2)}</td>
-        <td>${employee.grossPay.toFixed(2)}</td>
-        <td>${employee.deduction.toFixed(2)}</td>
-        <td>${employee.netPay.toFixed(2)}</td>
+        <td style="text-align: right">${employee.daysWorked}</td>
+        <td style="text-align: right">${employee.dailyRate.toFixed(2)}</td>
+        <td style="text-align: right">${employee.grossPay.toFixed(2)}</td>
+        <td style="text-align: right">${employee.deduction.toFixed(2)}</td>
+        <td style="text-align: right">${employee.netPay.toFixed(2)}</td>
         <td><button onclick="deleteEmployee(${index})">Delete</button></td>
         `;
+        document.getElementById("totalGross").innerHTML = totalGross.toFixed(2);
+        document.getElementById("totalDeduction").innerHTML = totalDeduction.toFixed(2);
+        document.getElementById("totalNet").innerHTML = totalNet.toFixed(2);
     });
 }
 
