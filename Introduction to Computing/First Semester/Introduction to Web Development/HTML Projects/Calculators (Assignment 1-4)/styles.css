@@ -5,9 +5,19 @@
     box-sizing: border-box;
 }
 
+/* Add spacing between the input field and the button */
+.converter {
+    display: flex;
+    flex-direction: column; /* Ensures input and button stack vertically */
+    align-items: center;    /* Center-align the elements */
+    gap: 10px;              /* Adds space between the input, button, and result */
+    margin-bottom: 20px;    /* Adds space between each converter section */
+}
+
+
 /* Body Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Funnel Sans', sans-serif;
     background-color: #f4f4f9;
     color: #333;
     display: flex;
@@ -23,13 +33,20 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 20px;
     max-width: 900px;
-    width: 100%;
+    width: 100%; /* Full width relative to parent container */
+    
+    /* Add these styles to make the div smaller and scrollable */
+    height: 700px; /* Limit the height of the div */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    overflow-x: hidden; /* Disable horizontal scrolling (optional) */
+    border: 1px solid #ccc; /* Optional: Add a border to highlight the div */
 }
 
 /* Header Style */
 h1 {
+    font-family: 'Funnel Sans', sans-serif;
     text-align: center;
     color: #333;
     font-size: 28px;
@@ -56,6 +73,7 @@ label {
 input[type="text"],
 input[type="number"] {
     padding: 10px;
+    padding-bottom: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;

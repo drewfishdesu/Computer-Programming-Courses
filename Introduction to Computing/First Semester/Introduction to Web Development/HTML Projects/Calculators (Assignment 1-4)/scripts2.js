@@ -25,8 +25,8 @@ function handleInputChange() {
     const taxableIncome = parseFloat(document.getElementById("taxableIncome").value);
 
     if (isNaN(taxableIncome) || taxableIncome < 0) {
-        document.getElementById("displayIncome").textContent = "-";
-        document.getElementById("displayTax").textContent = "-";
+        document.getElementById("displayIncome").textContent = " ";
+        document.getElementById("displayTax").textContent = " ";
         return; // Exit if input is invalid
     }
 
