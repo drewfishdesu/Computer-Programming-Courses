@@ -41,3 +41,18 @@ function convertFeetToMeters() {
         document.getElementById('feetResult').innerText = "Please enter a valid number.";
     }
 }
+
+// Animations
+window.addEventListener('scroll', function () {
+    const calculators = document.querySelectorAll('.calculator-box');
+
+    calculators.forEach(function (box) {
+        const boxPosition = box.getBoundingClientRect().top; // Get the position of the box
+        const windowHeight = window.innerHeight; // Get the height of the viewport
+
+        // If the box is in the viewport
+        if (boxPosition < windowHeight - 100) {
+            box.classList.add('fade-in'); // Add fade-in class to trigger the animation
+        }
+    });
+});
