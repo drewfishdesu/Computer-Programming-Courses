@@ -34,7 +34,7 @@ body {
     border-radius: 10px;                 /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     padding: 20px;                       /* Padding inside the container */
-    max-width: 900px;
+    max-width: 500px;
     width: 100%;
     backdrop-filter: blur(10px);         /* Apply background blur for the frosted effect */
     border: 1px solid rgba(255, 255, 255, 0.4); /* Light border for a glassy appearance */
@@ -63,6 +63,9 @@ body {
 
 /* Delay each box slightly for a staggered effect (animations) */
 .calculator-box:nth-child(1) {
+    animation-delay: 0.2s;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     animation-delay: 0.2s;
 }
 
@@ -97,6 +100,48 @@ body {
     transform: scale(1.1); /* Grow the box by 10% */
 }
 
+/* Vertical Divider Results Section */
+.result-container {
+    display: flex;               /* Arrange results in a row */
+    justify-content: center;     /* Center-align the content */
+    align-items: flex-start;     /* Align items at the top */
+    gap: 20px;                   /* Space between columns */
+    margin-top: 20px;            /* Space from the calculator */
+}
+
+.result-box {
+    flex: 1;                     /* Equal width for both boxes */
+    text-align: center;          /* Center the text */
+    background: rgba(255, 255, 255, 0.4); /* Semi-transparent background */
+    border: 1px solid rgba(92, 255, 125, 0.483); /* Border */
+    border-radius: 5px;          /* Rounded corners */
+    padding: 15px;               /* Internal spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.result-box label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 8px;          /* Space between label and box */
+    display: block;              /* Ensure label appears above box */
+}
+
+.result-box p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;                   /* No extra margin around the result */
+    height: 24px;                /* Consistent height to prevent jumping */
+    line-height: 24px;           /* Vertically center text inside the box */
+}
+
+.divider {
+    width: 2px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.2); /* Vertical divider color */
+    border-radius: 1px;
+}
 
 /* Header Style */
 h1 {
@@ -191,8 +236,12 @@ th, td {
 }
 
 th {
-    background-color: #4CAF50;
-    color: white;
+    padding: 12px;
+    font-size: 18px;
+    background: rgba(92, 255, 125, 0.2); /* Transparent white for frosted look */
+    color: #333; /* Darker text color for contrast */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
 }
 
 td {
