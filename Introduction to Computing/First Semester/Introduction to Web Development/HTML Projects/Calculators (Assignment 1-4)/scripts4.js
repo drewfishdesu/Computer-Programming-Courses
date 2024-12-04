@@ -1,85 +1,72 @@
 let payrollData = [];
 
+// Add employee
 function addEmployee() {
-    // Get input values
-    const name = document.getElementById('name').value;
+    // Get form values
+    const name = document.getElementById('name').value.trim();
     const daysWorked = parseInt(document.getElementById('daysWorked').value);
     const dailyRate = parseFloat(document.getElementById('dailyRate').value);
     const deduction = parseFloat(document.getElementById('deduction').value);
 
-    // Error handling and input validation
-    if (!name || !daysWorked || !dailyRate || !deduction) {
-        alert("Please fill out all fields.");
+    // Validate inputs
+    if (!name || daysWorked <= 0 || dailyRate < 0 || deduction < 0) {
+        alert("Please provide valid inputs.");
         return;
     }
 
-    // Calculate Gross and Net Pay
+    // Calculate payroll details
     const grossPay = daysWorked * dailyRate;
     const netPay = grossPay - deduction;
 
-    // Add employee to payroll data
-    payrollData.push({
-        name: name,
-        daysWorked: daysWorked,
-        dailyRate: dailyRate,
-        grossPay: grossPay,
-        deduction: deduction,
-        netPay: netPay,
-    });
+    // Add employee to payroll array
+    payrollData.push({ name, daysWorked, dailyRate, grossPay, deduction, netPay });
 
-    // Updates the table
+    // Update table and clear form
     updatePayrollTable();
-
-    // Clears the form
-    document.getElementById('name').value = '';
-    document.getElementById('daysWorked').value = '';
-    document.getElementById('dailyRate').value = '';
-    document.getElementById('deduction').value = '';
+    document.getElementById('payrollForm').reset();
 }
 
+// Update payroll table
 function updatePayrollTable() {
-    const tableBody = document.getElementById('payrollTable').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ''; // Clear current table rows
+    const tableBody = document.querySelector('#payrollTable tbody');
+    tableBody.innerHTML = ''; // Clear table
+
+    // Totals
     let totalGross = 0;
     let totalDeduction = 0;
     let totalNet = 0;
 
-    payrollData.forEach((employee, index)  =>{
+    payrollData.forEach((employee, index) => {
         totalGross += employee.grossPay;
         totalDeduction += employee.deduction;
         totalNet += employee.netPay;
-        
-        const row = tableBody.insertRow();
-        row.innerHTML = `
-        <td style="text-align: right; padding-right: 10px">${index + 1}</td>
-        <td>${employee.name}</td>
-        <td style="text-align: right">${employee.daysWorked}</td>
-        <td style="text-align: right">${employee.dailyRate.toFixed(2)}</td>
-        <td style="text-align: right">${employee.grossPay.toFixed(2)}</td>
-        <td style="text-align: right">${employee.deduction.toFixed(2)}</td>
-        <td style="text-align: right">${employee.netPay.toFixed(2)}</td>
-        <td><button onclick="deleteEmployee(${index})">Delete</button></td>
+
+        // Create row
+        const row = `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${employee.name}</td>
+                <td>${employee.daysWorked}</td>
+                <td>${employee.dailyRate.toFixed(2)}</td>
+                <td>${employee.grossPay.toFixed(2)}</td>
+                <td>${employee.deduction.toFixed(2)}</td>
+                <td>${employee.netPay.toFixed(2)}</td>
+                <td><button onclick="deleteEmployee(${index})">Delete</button></td>
+            </tr>
         `;
-        document.getElementById("totalGross").innerHTML = totalGross.toFixed(2);
-        document.getElementById("totalDeduction").innerHTML = totalDeduction.toFixed(2);
-        document.getElementById("totalNet").innerHTML = totalNet.toFixed(2);
+        tableBody.insertAdjacentHTML('beforeend', row);
     });
+
+    // Update totals
+    document.getElementById('totalGross').textContent = totalGross.toFixed(2);
+    document.getElementById('totalDeduction').textContent = totalDeduction.toFixed(2);
+    document.getElementById('totalNet').textContent = totalNet.toFixed(2);
 }
 
-function deleteEmployee(index = -1) {
-    if(index === -1) {
-        // Ask for a line number if no index is passed
-        const lineNumber = prompt("Enter the line number to delete: ");
-        const lineIndex = parseInt(lineNumber) - 1;
-
-        if(lineIndex >= 0 && lineIndex < payrollData.length) {
-            payrollData.splice(lineIndex, 1);
-            updatePayrollTable();
-        } else {
-            alert("Invalid Line Number.");
-        }
-    } else {
-        // Delete employee directly if index is provided
+// Delete employee
+function deleteEmployee(index) {
+    const isSure = confirm(`Are you sure you want to delete ${payrollData[index].name}?`);
+    if (isSure) {
         payrollData.splice(index, 1);
         updatePayrollTable();
     }

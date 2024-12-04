@@ -1,10 +1,15 @@
 /* Basic styling for the body and the form */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family: 'Funnel Sans', sans-serif;
+    background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.8), rgba(135, 206, 235, 0.8)); /* Soft gradient background */
+    color: #333;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    background-color: #f4f4f4;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(10px); /* Subtle blur for the entire background */
 }
 
 /* Header style */
@@ -16,6 +21,15 @@ h1 {
 /* Form section styling */
 #form-section {
     max-width: 500px;
+    margin: 0 auto;  /* Centers the form */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#payroll-list {
+    max-width: 850px;
     margin: 0 auto;  /* Centers the form */
     padding: 20px;
     background-color: #fff;
@@ -63,7 +77,8 @@ button:hover {
 table {
     width: 100%;
     margin-top: 20px;
-    border-collapse: collapse;
+    border-radius: 10px; /* Rounds the corners of the table */
+    border-collapse: collapse; /* Ensures the rounded corners are visible */
 }
 
 table th, table td {

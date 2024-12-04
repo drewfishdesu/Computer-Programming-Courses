@@ -28,7 +28,7 @@ body {
     width: 100%;
     backdrop-filter: blur(15px); /* Frosted glass effect */
     border: 1px solid rgba(255, 255, 255, 0.4); /* Glassy border */
-    height: 400px; /* Smaller height */
+    height: 550px; /* Smaller height */
     overflow-y: auto; /* Vertical scrolling */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     opacity: 0;
