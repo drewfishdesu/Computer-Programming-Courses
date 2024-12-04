@@ -27,7 +27,11 @@ function calculate() {
     } while (j <= N);
 
     // Calculate average using a for loop
-    let average = sum / N;
+    let total = 0;
+    for (let k = 1; k <= N; k++) {
+        total += k;
+    }
+    let average = total / N;
 
     // Update the results in the HTML
     // Display factorial in scientific notation if it's very large

@@ -8,8 +8,7 @@
 /* Body Styles */
 body {
     font-family: 'Funnel Sans', sans-serif;
-    background: url('background-image.jpg') no-repeat center center fixed; /* Background image */
-    background-size: cover; /* Ensure the image covers the entire page */
+    background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.8), rgba(135, 206, 235, 0.8)); /* Soft gradient background */
     color: #333;
     display: flex;
     justify-content: center;
