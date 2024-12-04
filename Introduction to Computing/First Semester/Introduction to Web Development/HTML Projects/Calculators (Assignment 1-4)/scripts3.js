@@ -38,4 +38,5 @@ function calculate() {
     document.getElementById("averageResult").textContent = average.toFixed(2);
 }
 
-// Add event
+// Add event listener to update results in real-time
+document.getElementById("numberInput").addEventListener("input", calculate);
