@@ -1,12 +1,16 @@
-// Get input value (N)
+// Function to calculate factorial, sum, and average
 function calculate() {
     const N = parseInt(document.getElementById("numberInput").value);
+
+    // Input validation: Check if N is a valid positive integer
     if (isNaN(N) || N < 1) {
-        alert("Please use a valid positive integer.");
-        return;
+        document.getElementById("factorialResult").textContent = "-";
+        document.getElementById("sumResult").textContent = "-";
+        document.getElementById("averageResult").textContent = "-";
+        return; // Exit if the input is invalid
     }
 
-    // Get factorials using a while loop
+    // Calculate factorial using a while loop
     let factorial = 1;
     let i = 1;
     while (i <= N) {
@@ -14,7 +18,7 @@ function calculate() {
         i++;
     }
 
-    // Sum using do-while loop
+    // Calculate sum using a do-while loop
     let sum = 0;
     let j = 1;
     do {
@@ -22,25 +26,17 @@ function calculate() {
         j++;
     } while (j <= N);
 
-    // Average using a for loop
-    let average = 0;
-    let total = 0;
-    for (let k = 1; k <= N; k++) {
-        total += k
-    }
-    average = total / N;
+    // Calculate average using a for loop
+    let average = sum / N;
 
-    // Shows the results on the page
-    document.getElementById("factorialResult").textContent = factorial.toFixed(2);
+    // Update the results in the HTML
+    // Display factorial in scientific notation if it's very large
+    document.getElementById("factorialResult").textContent = 
+        factorial > 1e15 ? factorial.toExponential(2) : factorial;
+
     document.getElementById("sumResult").textContent = sum;
     document.getElementById("averageResult").textContent = average.toFixed(2);
-
-    // Updates the factorial result (in scientific notation)
-    if(factoral > 1e15) {
-        // Two significant digits
-        document.getElementById("factorialResult").textContent = factorial.toFixed(2);
-    } else { // Display normally
-        document.getElementById("factorialResult").textContent = factorial;
-    }
 }
 
+// Add event listener to update results in real-time
+document.getElementById("numberInput").addEventListener("input", calculate);

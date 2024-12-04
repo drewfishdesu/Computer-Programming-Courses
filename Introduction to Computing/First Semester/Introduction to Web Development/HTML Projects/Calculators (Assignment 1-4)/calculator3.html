@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Factorial, Sum, and Average of First N Natural Numbers</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+    <link rel="stylesheet" href="factorial.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: url('https://cdn.discordapp.com/attachments/1214254883063078922/1310789906137874522/image.jpg?ex=675062fa&is=674f117a&hm=0f673f56f98d4e6b16a5ef798186dd4ab97abf5027a2f72d8f27277b278ad02d&');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             margin: 0;
+             height: 100vh;">
+    <div class="container">
         <h1>Factorial, Sum, and Average of First N Natural Numbers</h1>
-        <div class="container">
-            <label for="numberInput">Enter a positive integer</label>
-            <input type="number" id="numberInput" min="1" placeholder="Enter N">
-            <button onclick="calculate()">Calculate</button>
-
-            <!-- Static result area (updates using JavaScript) -->
-            <div id="initialResult" class="result">
-                <h3>Results:</h3>
-                <p><strong>Factorial:</strong> <span id="factorialResult">-</span></p>
-                <p><strong>Sum:</strong> <span id="sumResult">-</span></p>
-                <p><strong>Average:</strong> <span id="averageResult">-</span></p>
+        <div class="calculator-box">
+            <label for="numberInput">Enter an integer</label>
+            <input type="number" id="numberInput" placeholder="Enter an integer to calculate">
+        </div>
+        <!-- Results Section -->
+        <div class="result-container">
+            <div class="result-row">
+                <div class="result-box">
+                    <label for="factorial">Factorial</label>
+                    <p id="factorialResult">-</p>
+                </div>
+                <div class="result-box">
+                    <label for="sum">Sum</label>
+                    <p id="sumResult">-</p>
+                </div>
+                <div class="result-row">
+                    <div class="result-box">
+                        <label for="average">Average</label>
+                        <p id="averageResult">-</p>
+                    </div>
             </div>
         </div>
-
-        <!-- Importing the JavaScript file -->
-        <script src="scripts3.js"></script>
-    </body>
+    </div>
+    <script src="scripts3.js"></script>
+</body>
 </html>

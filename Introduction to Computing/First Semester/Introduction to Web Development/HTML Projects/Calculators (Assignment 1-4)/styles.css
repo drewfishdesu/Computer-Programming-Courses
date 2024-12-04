@@ -214,4 +214,106 @@ button:hover {
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* End in or
+        transform: translateY(0); /* End in original position */
+    }
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    padding: 12px;
+    font-size: 18px;
+    background: rgba(92, 255, 125, 0.2); /* Transparent white for frosted look */
+    color: #333; /* Darker text color for contrast */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+td {
+    background-color: #f2f2f2;
+}
+
+/* Action Buttons in Table (Delete Button) */
+td button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+td button:hover {
+    background-color: #d32f2f;
+}
+
+/* Payroll List Result Styling */
+.result {
+    padding: 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    text-align: left; /* Align results to the left for better readability */
+    border-top: 2px solid #f0f0f0;
+    margin-top: 20px;
+}
+
+/* Add space between h3 and paragraphs */
+.result h3 {
+    margin-bottom: 15px;  /* Adds space below the h3 element */
+}
+
+.result p {
+    margin-bottom: 10px;
+}
+
+.result strong {
+    color: #4CAF50;
+}
+
+/* Span inside result display for dynamic results */
+#factorialResult,
+#sumResult,
+#averageResult {
+    font-weight: normal;
+    color: #333;
+}
+
+/* Responsive Design (Mobile-first approach) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"], input[type="number"], button {
+        font-size: 16px;
+    }
+
+    .result {
+        font-size: 16px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
