@@ -1,38 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* General Styles */
 body {
   font-family: 'Funnel Sans', sans-serif;
-  background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.8), rgba(135, 206, 235, 0.8)); /* Soft gradient background */
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0px;
-  backdrop-filter: blur(10px); /* Subtle blur for the entire background */
-  padding: 10px; /* Added padding for better display on small devices */
+    background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.8), rgba(195, 155, 255, 0.8)); /* Soft gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(10px); /* Subtle blur for the entire background */
 }
 
-/* Heading */
-h1 {
-  margin-bottom: 20px;
-  font-size: 2rem; /* Adjusted font size for mobile */
-  color: #333;
-  text-align: left; /* Align heading text to the left */
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Box Container */
 .box {
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  padding: 20px 30px;
+  max-width: 380px; /* Smaller width */
   width: 100%;
-  max-width: 600px; /* Slightly reduced max-width for better responsiveness */
-  max-height: 450px;
-  padding: 20px;
-  backdrop-filter: blur(15px);
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  backdrop-filter: blur(15px); /* Frosted glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Glassy border */
+  height: 270px; /* Smaller height */
+  overflow-y: auto; /* Vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  opacity: 0;
   animation: fadeUp 1s ease-out forwards;
-  margin: 0 20px; /* Added margin for spacing on both sides */
+}
+
+
+/* Heading */
+h1 {
+  margin-bottom: 20px;
+  animation: fadeUp 1s ease-out forwards;
+  font-size: 2rem; /* Adjusted font size for mobile */
+  color: #333;
+  text-align: left; /* Align heading text to the left */
 }
 
 /* Paragraph (instruction text) */
@@ -71,7 +90,7 @@ a:hover {
 }
 
 /* Responsive Styling */
-@media (max-width: 600px) {
+@media (max-width: 1079px) {
   body {
     padding: 10px; /* Added padding for better spacing on small screens */
   }
@@ -80,7 +99,7 @@ a:hover {
     width: 100%; /* Full width for mobile */
     max-width: none; /* Remove max-width constraint */
     padding: 15px; /* Reduced padding for smaller devices */
-    margin: 0 10px; /* Adjusted margin for better fit */
+    margin: 10px; /* Adjusted margin for better fit */
   }
 
   h1 {
@@ -95,5 +114,17 @@ a:hover {
   a {
     font-size: 0.9rem; /* Adjust button font size */
     padding: 8px 15px; /* Reduced button padding for better fit */
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
   }
 }

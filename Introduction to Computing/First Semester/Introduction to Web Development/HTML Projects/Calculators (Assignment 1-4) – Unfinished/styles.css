@@ -1,0 +1,148 @@
+/* General reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Funnel Sans', sans-serif;
+    background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.8), rgba(235, 180, 135, 0.8));
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Container Styles */
+.container {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px; /* Increase max width for better visibility on larger screens */
+    height: auto; /* Allow container height to grow based on content */
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Header Style */
+h1 {
+    font-family: 'Funnel Sans', sans-serif;
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Calculator Box Styling */
+.calculator-box {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.calculator-box label {
+    display: block;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.calculator-box input[type="number"],
+.calculator-box button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Hover effect for calculator boxes */
+.calculator-box:hover {
+    transform: scale(1.05);
+}
+
+/* Button Styles */
+button {
+    padding: 12px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.47);
+    color: #333;
+    border: 1px solid rgba(92, 255, 125, 0.483);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(5px);
+}
+
+button:hover {
+    background: rgba(92, 255, 125, 0.483);
+    color: #000;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width for small screens */
+        max-width: 100%; /* Remove max-width limitation */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px; /* Adjust header size for smaller screens */
+    }
+
+    .calculator-box {
+        padding: 12px; /* Slightly reduce padding for better space management */
+    }
+
+    .calculator-box label {
+        font-size: 16px; /* Smaller label size for mobile */
+    }
+
+    .calculator-box input[type="number"],
+    .calculator-box button {
+        font-size: 16px; /* Adjust font size for inputs and buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px; /* Further reduce header size on very small screens */
+    }
+
+    .calculator-box input[type="number"],
+    .calculator-box button {
+        font-size: 14px; /* Make inputs and buttons smaller for small devices */
+    }
+
+    .container {
+        padding: 15px; /* Adjust padding for very small screens */
+    }
+}

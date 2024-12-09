@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Unit Converter</h1>
+
+        <!-- Celsius to Fahrenheit -->
+        <div class="calculator-box">
+            <label for="celsiusInput">Celsius to Fahrenheit</label>
+            <input type="number" id="celsiusInput" placeholder="Enter temperature in Celsius">
+            <button onclick="convertCelsiusToFahrenheit()">Convert</button>
+            <div id="celsiusResult" class="result-box"></div>
+        </div>
+
+        <!-- Fahrenheit to Celsius -->
+        <div class="calculator-box">
+            <label for="fahrenheitInput">Fahrenheit to Celsius</label>
+            <input type="number" id="fahrenheitInput" placeholder="Enter temperature in Fahrenheit">
+            <button onclick="convertFahrenheitToCelsius()">Convert</button>
+            <div id="fahrenheitResult" class="result-box"></div>
+        </div>
+
+        <!-- Meters to Feet -->
+        <div class="calculator-box">
+            <label for="metersInput">Meters to Feet Converter</label>
+            <input type="number" id="metersInput" placeholder="Enter distance in meters">
+            <button onclick="convertMetersToFeet()">Convert</button>
+            <div id="metersResult" class="result-box"></div>
+        </div>
+
+        <!-- Feet to Meters -->
+        <div class="calculator-box">
+            <label for="feetInput">Feet to Meters Converter</label>
+            <input type="number" id="feetInput" placeholder="Enter distance in feet">
+            <button onclick="convertFeetToMeters()">Convert</button>
+            <div id="feetResult" class="result-box"></div>
+        </div>
+    </div>
+
+    <script src="scripts1.js"></script>
+</body>
+</html>

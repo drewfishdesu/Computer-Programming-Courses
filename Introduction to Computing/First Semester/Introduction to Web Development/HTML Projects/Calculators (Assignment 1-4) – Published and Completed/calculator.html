@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts -->
@@ -10,13 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-image: url('https://cdn.discordapp.com/attachments/1214254883063078922/1310789906137874522/image.jpg?ex=675062fa&is=674f117a&hm=0f673f56f98d4e6b16a5ef798186dd4ab97abf5027a2f72d8f27277b278ad02d&'); 
-             background-size: cover; 
-             background-position: center; 
-             background-repeat: no-repeat; 
-             margin: 0; 
-             height: 100vh;">
-
+<body>
     <div class="container">
         <h1>Unit Converter</h1>
 
@@ -25,7 +20,7 @@
             <label for="celsiusInput">Celsius to Fahrenheit</label>
             <input type="number" id="celsiusInput" placeholder="Enter temperature in Celsius">
             <button onclick="convertCelsiusToFahrenheit()">Convert</button>
-            <div id="celsiusResult" class="result"></div>
+            <div id="celsiusResult" class="result-box"></div>
         </div>
 
         <!-- Fahrenheit to Celsius -->
@@ -33,7 +28,7 @@
             <label for="fahrenheitInput">Fahrenheit to Celsius</label>
             <input type="number" id="fahrenheitInput" placeholder="Enter temperature in Fahrenheit">
             <button onclick="convertFahrenheitToCelsius()">Convert</button>
-            <div id="fahrenheitResult" class="result"></div>
+            <div id="fahrenheitResult" class="result-box"></div>
         </div>
 
         <!-- Meters to Feet -->
@@ -41,7 +36,7 @@
             <label for="metersInput">Meters to Feet Converter</label>
             <input type="number" id="metersInput" placeholder="Enter distance in meters">
             <button onclick="convertMetersToFeet()">Convert</button>
-            <div id="metersResult" class="result"></div>
+            <div id="metersResult" class="result-box"></div>
         </div>
 
         <!-- Feet to Meters -->
@@ -49,7 +44,7 @@
             <label for="feetInput">Feet to Meters Converter</label>
             <input type="number" id="feetInput" placeholder="Enter distance in feet">
             <button onclick="convertFeetToMeters()">Convert</button>
-            <div id="feetResult" class="result"></div>
+            <div id="feetResult" class="result-box"></div>
         </div>
     </div>
 

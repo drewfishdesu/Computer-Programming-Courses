@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Payroll</title>
+    <link rel="stylesheet" href="payroll.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <br><br>
+        <h1 class="fade-up">Simple Payroll</h1>
+    </header>
+    <main>
+        <section id="form-section" class="fade-up">
+            <form id="payrollForm" onsubmit="addEmployee(); return false;">
+                <label for="name">Employee Name:</label>
+                <input type="text" id="name" placeholder="Enter employee name" class="formInput" required>
+
+                <label for="daysWorked">Days Worked:</label>
+                <input type="number" id="daysWorked" placeholder="Enter days worked" class="formInput" required min="1">
+
+                <label for="dailyRate">Daily Rate:</label>
+                <input type="number" id="dailyRate" placeholder="Enter daily rate" class="formInput" required min="0">
+
+                <label for="deduction">Deduction:</label>
+                <input type="number" id="deduction" placeholder="Enter deduction amount" class="formInput" required min="0">
+
+                <button type="submit">Add Employee</button>
+            </form>
+        </section>
+        <br><br><br>
+        <section id="payroll-list" class="fade-up">
+            <h2>Payroll List</h2>
+            <table id="payrollTable">
+                <thead>
+                    <tr>
+                        <th>Employee Number</th>
+                        <th>Employee Name</th>
+                        <th>Days Worked</th>
+                        <th>Daily Rate</th>
+                        <th>Gross Pay</th>
+                        <th>Deduction Amount</th>
+                        <th>Net Pay</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Payroll entries will populate here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th colspan="3"></th>
+                        <th id="totalGross">0.00</th>
+                        <th id="totalDeduction">0.00</th>
+                        <th id="totalNet">0.00</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+    <br><br>
+    <script src="scripts4.js"></script>
+</body>
+</html>

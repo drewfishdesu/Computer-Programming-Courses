@@ -1,0 +1,130 @@
+/* General reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Funnel Sans', sans-serif;
+    background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.8), rgba(235, 135, 158, 0.8)); /* Soft gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(10px); /* Subtle blur for the entire background */
+}
+
+/* Container Styles */
+.container {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    padding: 20px;
+    max-width: 380px; /* Smaller width */
+    width: 100%;
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Glassy border */
+    height: 400px; /* Smaller height */
+    overflow-y: auto; /* Vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Frosted effect for boxes inside the container */
+.calculator-box,
+.result-box {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px; /* Add spacing between elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Frosted effect */
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards; /* Apply fade-up animation */
+}
+
+/* Header Style */
+h1 {
+    font-family: 'Funnel Sans', sans-serif;
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Input Styles */
+input[type="text"], input[type="number"] {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Frosted border */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(5px); /* Subtle frosted effect */
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #5dd961;
+}
+
+/* Taxable Income and Income Tax Styles */
+.taxable-income,
+.income-tax {
+    display: flex;
+    flex-direction: column; /* Stack the label and value */
+    margin-bottom: 10px; /* Keep consistent spacing between elements */
+}
+
+.taxable-income {
+    margin-bottom: 5px; /* Closer to income tax */
+}
+
+.income-tax {
+    margin-top: 0; /* Reduced top margin */
+}
+
+/* Divider */
+.divider {
+    height: 10px;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+    <link rel="stylesheet" href="incometax.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Income Tax Calculator</h1>
+        <div class="calculator-box">
+            <label for="taxableIncome">Enter Taxable Income (in PHP):</label>
+            <input type="number" id="taxableIncome" placeholder="Enter amount in PHP">
+        </div>
+        <!-- Results Section -->
+        <div class="result-container">
+            <div class="result-row">
+                <div class="result-box">
+                    <label for="displayIncome">Taxable Income</label>
+                    <p id="displayIncome">-</p>
+                </div>
+                <div class="result-box">
+                    <label for="displayTax">Income Tax</label>
+                    <p id="displayTax">-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts2.js"></script>
+</body>
+</html>
